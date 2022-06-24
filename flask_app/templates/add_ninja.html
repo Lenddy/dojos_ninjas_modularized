@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Add Ninja</h1>
+		<form action="/new/ninja" method="post">
+			<label for="dojo" value="dojo" name="dojo"> dojo</label>
+			<!--you should add the name of the key that you want it to be call by   -->
+			<select name="dojo_id" id="dojo_id" value="dojo-id">
+				{% for dojo in all_dojos %}
+				<option value="{{dojo.id}}">{{dojo.name}}</option>
+				{%endfor%}
+			</select>
+			<div>
+				<label for="first_name" value="first_name">First name</label>
+				<input type="text" name="first_name" />
+			</div>
+
+			<div>
+				<label for="last_name" value="last_name">Last name</label>
+				<input type="text" name="last_name" />
+			</div>
+			<div>
+				<label for="age" value="age">age</label>
+				<input type="text" name="age" />
+			</div>
+			<div>
+				<input type="submit"/>
+			</div>
+		</form>
+
+		<a href="/"> Home page</a>
+	</body>
+</html>

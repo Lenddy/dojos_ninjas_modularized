@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Dojos</title>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="{{url_for('static',filename = 'style.css')}}"
+		/>
+	</head>
+	<body>
+        <h1>all dojos</h1>
+		<table>
+			<tr>
+				<th>Dojo</th>
+				<th>action</th>
+			</tr>
+            {% for dojo in all_dojos %}
+			<tr>
+            <td>{{dojo.name}}</td>
+            <td><a href="/show/{{dojo.id}}">show</a></td>
+			</tr>
+			{%endfor%}
+		</table>
+        <a href="/new/dojo">Add new dojo</a>
+		<div><a href="/ninjas"> Add Ninja</a></div>
+
+	</body>
+</html>
